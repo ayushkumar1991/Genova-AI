@@ -196,7 +196,7 @@ npm run dev
 ### Environment Variables
 
 ```bash
-# Frontend (.env.local)   //We have deployed the Backend API URL over MODAL.COM with 5 FREE Credits 
+# Frontend (.env)   //We have deployed and pushed .env directly which has the Backend API URL over MODAL.COM with 5 FREE Credits 
 NEXT_PUBLIC_ANALYZE_SINGLE_VARIANT_BASE_URL=https://your-modal-endpoint.modal.run
 ```
 
