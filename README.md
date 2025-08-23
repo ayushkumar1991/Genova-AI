@@ -149,7 +149,7 @@ graph TB
 | **Cost Reduction** | 80%         | vs. manual interpretation     |
 | **VUS Resolution** | 60%         | Previously uncertain variants |
 
-### Clinical Impact
+### Its Future Clinical Impact
 
 - **🏥 Hospital Integration:** 15+ healthcare systems testing pilot deployment
 - **🔬 Research Adoption:** 200+ researchers using for variant prioritization
@@ -323,7 +323,8 @@ _Built with ❤️ for the Global AI Buildathon 2025_
 
 ## **[!IMPORTANT!]**
 
-Running the Analysis or irst time will take some time around 40-50 seconds because of start time of Modal.com(Our backend API URL deployed here), so please wait or the same, Once first analysis is done you can run as many analysis quickly..
+Running the Analysis for first time will take some time around 40-50 seconds because of start time of Modal.com(Our backend API URL deployed here), so please wait or the same, Once first analysis is done you can run as many analysis quickly..
+
 Our Deployed URL On Modal.com runs on 5 FREE Modal credits. If exhausted, please contact us at ayushkumr1991@gmail.com we will create another one Thanks!.
 
 </div>
