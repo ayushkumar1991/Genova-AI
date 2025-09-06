@@ -6,7 +6,6 @@ from tqdm import tqdm
 import torch
 from vortex.model.model import StripedHyena
 
-
 def prepare_batch(
         seqs: List[str],
         tokenizer: object,

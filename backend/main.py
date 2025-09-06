@@ -1,6 +1,7 @@
 import sys
 import modal
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 # ------------------------------
 # Request body schema
@@ -9,14 +10,12 @@ class VariantRequest(BaseModel):
     variant_position: int
     alternative: str
     genome: str
-
     chromosome: str
 
 # ------------------------------
 # Image build with dependencies
 # ------------------------------
 evo2_image = (
-    
     modal.Image.from_registry(
         "nvidia/cuda:12.4.0-devel-ubuntu22.04",
         add_python="3.12",
@@ -30,12 +29,9 @@ evo2_image = (
         "CC": "/usr/bin/gcc",
         "CXX": "/usr/bin/g++",
     })
-    # Upgrade pip, install wheel & setuptools, then install PyTorch & flash-attn
     .run_commands(
         "pip install --upgrade pip setuptools wheel && "
-        # Install PyTorch (adjust version & cudatoolkit if needed)
         "pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 && "
-        # Then install flash-attn which depends on torch
         "pip install flash-attn"
     )
     .run_commands(
@@ -47,11 +43,20 @@ evo2_image = (
     .pip_install_from_requirements("requirements.txt")
 )
 
-
 # ------------------------------
 # Modal app setup
 # ------------------------------
 app = modal.App("variant-analysis-evo2", image=evo2_image)
+
+# Access the underlying FastAPI app to add middleware
+fastapi_app = app.fastapi_app
+fastapi_app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://genova-ai-frontend.vercel.app"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 volume = modal.Volume.from_name("hf_cache", create_if_missing=True)
 mount_path = "/root/.cache/huggingface"
@@ -67,18 +72,22 @@ def get_genome_sequence(position, genome, chromosome, window_size=8192):
     print(f"Fetching {window_size}bp window around position {position} from UCSC API..")
     print(f"Coordinates: {chromosome}:{start}-{end} ({genome})")
 
-    api_url = f"https://api.genome.ucsc.edu/getData/sequence?genome={genome};chrom={chromosome};start={start};end={end}"
+    api_url = (
+        f"https://api.genome.ucsc.edu/getData/sequence?"
+        f"genome={genome};chrom={chromosome};start={start};end={end}"
+    )
     response = requests.get(api_url)
     if response.status_code != 200:
-        raise Exception(f"Failed to fetch genome sequence from UCSC API: {response.status_code}")
+        raise Exception(f"Failed to fetch genome sequence: {response.status_code}")
     genome_data = response.json()
     if "dna" not in genome_data:
         error = genome_data.get("error", "Unknown error")
         raise Exception(f"UCSC API error: {error}")
-    sequence = genome_data.get("dna", "").upper()
+    sequence = genome_data["dna"].upper()
     expected_length = end - start
     if len(sequence) != expected_length:
-        print(f"Warning: received sequence length ({len(sequence)}) differs from expected ({expected_length})")
+        print(f"Warning: received sequence length ({len(sequence)}) "
+              f"differs from expected ({expected_length})")
     print(f"Loaded reference genome sequence window (length: {len(sequence)} bases)")
     return sequence, start
 
@@ -102,12 +111,13 @@ def analyze_variant(relative_pos_in_window, reference, alternative, window_seq, 
     else:
         prediction = "Likely benign"
         confidence = min(1.0, abs(delta_score - threshold) / func_std)
+
     return {
         "reference": reference,
         "alternative": alternative,
         "delta_score": float(delta_score),
         "prediction": prediction,
-        "classification_confidence": float(confidence)
+        "classification_confidence": float(confidence),
     }
 
 # ------------------------------
@@ -159,7 +169,7 @@ class Evo2Model:
             )
 
         reference = window_seq[relative_pos]
-        print("Reference is: " + reference)
+        print("Reference is:", reference)
         result = analyze_variant(
             relative_pos_in_window=relative_pos,
             reference=reference,
@@ -181,22 +191,18 @@ def main():
     url = evo2Model.analyze_single_variant.web_url
     print(f"FastAPI endpoint URL: {url}")
 
-    try:
-        payload = {
-            "variant_position": 43119628,
-            "alternative": "G",
-            "genome": "hg38",
-            "chromosome": "chr17"
-        }
-        headers = {"Content-Type": "application/json"}
-        print("Sending request to the deployed endpoint...")
-        response = requests.post(url, json=payload, headers=headers)
-        response.raise_for_status()
-        result = response.json()
-        print("Response from API:", json.dumps(result, indent=2))
-    except Exception as e:
-        print("❌ Error calling the deployed API:", e)
-        print("Make sure the app is deployed before testing.")
+    payload = {
+        "variant_position": 43119628,
+        "alternative": "G",
+        "genome": "hg38",
+        "chromosome": "chr17"
+    }
+    headers = {"Content-Type": "application/json"}
+    print("Sending request to the deployed endpoint...")
+    response = requests.post(url, json=payload, headers=headers)
+    response.raise_for_status()
+    result = response.json()
+    print("Response from API:", json.dumps(result, indent=2))
 
 # ------------------------------
 # Function to print endpoint URL in deployed env
