@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 # ------------------------------
 # Request body schema
+
 # ------------------------------
 class VariantRequest(BaseModel):
     variant_position: int
@@ -15,7 +16,6 @@ class VariantRequest(BaseModel):
 # ------------------------------
 # Image build with dependencies
 # ------------------------------
-
 evo2_image = (
     
     modal.Image.from_registry(
@@ -31,7 +31,7 @@ evo2_image = (
         "CC": "/usr/bin/gcc",
         "CXX": "/usr/bin/g++",
     })
-    
+    # Upgrade pip, install wheel & setuptools, then install PyTorch & flash-attn
     .run_commands(
         "pip install --upgrade pip setuptools wheel && "
         # Install PyTorch (adjust version & cudatoolkit if needed)
