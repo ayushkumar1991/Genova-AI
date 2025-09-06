@@ -4,7 +4,6 @@ from pydantic import BaseModel
 
 # ------------------------------
 # Request body schema
-
 # ------------------------------
 class VariantRequest(BaseModel):
     variant_position: int
