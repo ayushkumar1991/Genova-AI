@@ -93,13 +93,13 @@ Unlike traditional tools that rely on conservation scores or statistical models,
 ```mermaid
 graph TB
     subgraph "User"
-        A[🌐 Frontend | Next.js]
+        A[🌐 Frontend &#124; Next.js]
     end
 
     subgraph "Cloud Infrastructure"
-        B[🚀 Backend | FastAPI]
-        C[☁️ GPU Infrastructure | Modal Labs]
-        D[🧠 Evo2 Model | NVIDIA H100]
+        B[🚀 Backend &#124; FastAPI]
+        C[☁️ GPU Infrastructure &#124; Modal Labs]
+        D[🧠 Evo2 Model &#124; NVIDIA H100]
         E[UCSC Genome API]
         F[NCBI ClinVar Database]
     end
