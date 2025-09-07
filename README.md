@@ -23,6 +23,7 @@ _An AI-powered platform revolutionizing genetic analysis by predicting the patho
 -   [🚨 The Problem](#-the-problem)
 -   [💡 Our Solution](#-our-solution)
 -   [🚀 Features](#-features)
+-   [💻 Technical Architecture](#-technical-architecture)
 -   [🛠️ Tech Stack](#️-tech-stack)
 -   [📊 Performance Metrics](#-performance-metrics)
 -   [🚀 Getting Started](#-getting-started)
