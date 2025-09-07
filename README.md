@@ -11,10 +11,10 @@
 
 </div>
 <div align="center">
-**Revolutionizing Genetic Analysis with AI**
+ Revolutionizing Genetic Analysis with AI
 
 _An AI-powered platform revolutionizing genetic analysis by predicting the pathogenicity of DNA variants in seconds, not weeks._
-</div>
+
 
 ##  "Built for HackOdisha 5.0 - Pioneering Healthcare Innovation Through AI"
 
