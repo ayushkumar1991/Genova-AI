@@ -2,8 +2,12 @@
 
 <div align="center">
 
-![Variant Effect Predictor](https://img.shields.io/badge/Variant%20Effect%20Predictor-AI%20Powered-blue?style=for-the-badge)
-![UN SDG](https://img.shields.io/badge/UN%20SDG-3%20%7C%20Good%20Health-red?style=for-the-badge)
+![Genova AI](https://img.shields.io/badge/Genova%20AI-Variant%20Effect%20Predictor-purple?style=for-the-badge)  
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-brightgreen?style=for-the-badge)  
+![Next.js](https://img.shields.io/badge/Next.js-Frontend-black?style=for-the-badge)  
+![Modal](https://img.shields.io/badge/Modal-GPU_Cloud-blue?style=for-the-badge)  
+![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge)  
+![HackOdisha 5.0](https://img.shields.io/badge/Made_for-HackOdisha%205.0-orange?style=for-the-badge)
 
 **Revolutionizing Genetic Analysis with AI**
 
