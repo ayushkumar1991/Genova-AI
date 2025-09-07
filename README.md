@@ -1,4 +1,4 @@
-# 🧬 Variant Effect Predictor with Evo2
+# 🧬 Genova AI: Variant Effect Predictor with Evo2
 
 <div align="center">
 
@@ -7,9 +7,11 @@
 
 **Revolutionizing Genetic Analysis with AI**
 
-_Democratizing precision medicine through AI-powered variant pathogenicity prediction_
+An AI-powered platform revolutionizing genetic analysis by predicting the pathogenicity of DNA variants in seconds, not weeks._
 
-[📊 Research Paper](https://www.biorxiv.org/content/10.1101/2025.02.18.638918v1)
+##  "Built for HackOdisha 5.0 - Pioneering Healthcare Innovation Through AI"
+
+[📊 Research Paper Used](https://www.biorxiv.org/content/10.1101/2025.02.18.638918v1)
 
 </div>
 
