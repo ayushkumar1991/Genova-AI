@@ -7,7 +7,7 @@
 
 **Revolutionizing Genetic Analysis with AI**
 
-An AI-powered platform revolutionizing genetic analysis by predicting the pathogenicity of DNA variants in seconds, not weeks._
+_An AI-powered platform revolutionizing genetic analysis by predicting the pathogenicity of DNA variants in seconds, not weeks._
 
 ##  "Built for HackOdisha 5.0 - Pioneering Healthcare Innovation Through AI"
 
