@@ -2,12 +2,14 @@
 
 <div align="center">
 
-![Genova AI](https://img.shields.io/badge/Genova%20AI-Variant%20Effect%20Predictor-purple?style=for-the-badge)  
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-brightgreen?style=for-the-badge)  
-![Next.js](https://img.shields.io/badge/Next.js-Frontend-black?style=for-the-badge)  
-![Modal](https://img.shields.io/badge/Modal-GPU_Cloud-blue?style=for-the-badge)  
-![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge)  
-![HackOdisha 5.0](https://img.shields.io/badge/Made_for-HackOdisha%205.0-orange?style=for-the-badge)
+![Genova AI](https://img.shields.io/badge/GENOVA%20AI-VARIANT%20EFFECT%20PREDICTOR-800080?style=for-the-badge) 
+![FastAPI](https://img.shields.io/badge/FASTAPI-BACKEND-00CC00?style=for-the-badge) 
+![Next.js](https://img.shields.io/badge/NEXT.JS-FRONTEND-000000?style=for-the-badge) 
+![Modal](https://img.shields.io/badge/MODAL-GPU%20CLOUD-007FFF?style=for-the-badge) 
+![Python](https://img.shields.io/badge/PYTHON-3.12-20B2AA?style=for-the-badge) 
+![HackOdisha](https://img.shields.io/badge/MADE%20FOR-HACKODISHA%205.0-FFA500?style=for-the-badge)
+
+</div>
 
 **Revolutionizing Genetic Analysis with AI**
 
