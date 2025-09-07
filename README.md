@@ -92,13 +92,25 @@ Unlike traditional tools that rely on conservation scores or statistical models,
 
 ```mermaid
 graph TB
-    A[User Interface - Next.js] --> B[FastAPI Backend]
-    B --> C[Modal GPU Infrastructure]
-    C --> D[Evo2 Model - NVIDIA H100]
-    B --> E[UCSC Genome API]
-    B --> F[NCBI ClinVar Database]
-    D --> G[Prediction Results]
-    G --> A
+    subgraph "User"
+        A[🌐 Frontend | Next.js]
+    end
+
+    subgraph "Cloud Infrastructure"
+        B[🚀 Backend | FastAPI]
+        C[☁️ GPU Infrastructure | Modal Labs]
+        D[🧠 Evo2 Model | NVIDIA H100]
+        E[UCSC Genome API]
+        F[NCBI ClinVar Database]
+    end
+
+    A -- API Request --> B
+    B -- Inference Job --> C
+    C -- Loads --> D
+    B -- Fetches Data --> E
+    B -- Fetches Data --> F
+    D -- Prediction --> G[✅ Prediction Results]
+    G -- Returns to --> A
 ```
 
 ---
@@ -163,10 +175,10 @@ graph TB
 ### Prerequisites
 
 ```bash
-Node.js ≥ 18 & npm
+Node.js ≥ 20 & npm
 Python 3.11-3.12 & pip
 Docker & Docker Compose
-Modal CLI account
+Modal CLI account   #(Optional) Not needed since we have deployed the backend at https://anant6725--variant-analysis-evo2-evo2model-analyze-singl-990f88.modal.run/
 ```
 
 ### 🐍 Backend Setup
@@ -244,13 +256,13 @@ NEXT_PUBLIC_ANALYZE_SINGLE_VARIANT_BASE_URL=https://your-modal-endpoint.modal.ru
 
 ```
 Genova-AI/
-├── 📁 evo2-backend/              # FastAPI + Modal backend
+├── 📁 backend/              # FastAPI + Modal backend
 │   ├── 🐍 main.py                # Modal deployment entry
 │   ├── 🧬 evo2/                  # Evo2 model loading
 │   ├── 💾 utils/                 # Helper functions
 │   ├── 📋 requirements.txt       # Python dependencies
 |
-├── 📁 evo2-frontend/             # Next.js frontend
+├── 📁 frontend/             # Next.js frontend
 │   ├── 📱 app/                   # App router pages
 │   ├── 🧩 components/            # Reusable UI components
 │   ├── 🔧 lib/                   # Utility libraries
@@ -319,8 +331,6 @@ Our validation follows clinical genetics best practices:
 
 </div>
 
-## **[!IMPORTANT!]**
-
 <div align="center">
 
 🚨 Our live demo is running on a limited number of free credits on Modal.com 🚨
@@ -331,7 +341,6 @@ The very first analysis after a period of inactivity will experience a "cold sta
 Subsequent analyses will be extremely fast (2-3 seconds). Please be patient on your first try!
 
 If the demo credits are exhausted, the API will not function. Please contact us at ayushkumr1991@gmail.com, and we will gladly provide a new endpoint. Thank you for your understanding!
-
 </div>
 
 </div>
