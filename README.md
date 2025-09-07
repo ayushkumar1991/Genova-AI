@@ -10,10 +10,11 @@
 ![HackOdisha](https://img.shields.io/badge/MADE%20FOR-HACKODISHA%205.0-FFA500?style=for-the-badge)
 
 </div>
-
+<div align="center">
 **Revolutionizing Genetic Analysis with AI**
 
 _An AI-powered platform revolutionizing genetic analysis by predicting the pathogenicity of DNA variants in seconds, not weeks._
+</div>
 
 ##  "Built for HackOdisha 5.0 - Pioneering Healthcare Innovation Through AI"
 
