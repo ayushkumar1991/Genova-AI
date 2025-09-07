@@ -19,20 +19,17 @@ _An AI-powered platform revolutionizing genetic analysis by predicting the patho
 
 ## 📑 Table of Contents
 
-- 📘 [Project Overview](#project-overview)  
-- 🛠️ [Tech Stack](#tech-stack)  
-- ⚙️ [Installation & Setup](#installation--setup)  
-- 🚀 [Usage Guide](#usage-guide)  
-- 🔌 [API Documentation](#api-documentation)  
-- 💻 [Frontend Details](#frontend-details)  
-- 📂 [Project Structure](#project-structure)  
-- 🔒 [Authentication / Security](#authentication--security)  
-- ⚡ [Features Summary](#features-summary)  
-- 📝 [Examples](#examples)  
-- 🤝 [Contributing Guide](#contributing-guide)  
-- 🧪 [Testing Instructions](#testing-instructions)  
-- 📄 [License](#license)  
-- 🎯 [Future Improvements](#future-improvements)
+-   [🌍 Addressing UN Sustainable Development Goals](#-addressing-un-sustainable-development-goals)
+-   [🚨 The Problem](#-the-problem)
+-   [💡 Our Solution](#-our-solution)
+-   [🚀 Features](#-features)
+-   [🛠️ Tech Stack](#️-tech-stack)
+-   [📊 Performance Metrics](#-performance-metrics)
+-   [🚀 Getting Started](#-getting-started)
+-   [🏗️ Project Structure](#️-project-structure)
+-   [🔬 Scientific Background](#-scientific-background)
+-   [🙏 Acknowledgments](#-acknowledgments)
+-   [⚠️ IMPORTANT DEPLOYMENT NOTICE](#️-important-deployment-notice-️)
 
 ---
 
