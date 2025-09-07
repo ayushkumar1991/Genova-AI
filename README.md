@@ -321,8 +321,17 @@ Our validation follows clinical genetics best practices:
 
 ## **[!IMPORTANT!]**
 
-Running the Analysis for first time i.e "COLD START" will take some time around 40-50 seconds because of start time of Modal.com(Our backend API URL deployed here), so please wait or the same, Once first analysis is done you can run as many analysis quickly within 2-3 seconds..
+<div align="center">
 
-Our Deployed URL On Modal.com runs on 5 FREE Modal credits. If exhausted, please contact us at ayushkumr1991@gmail.com we will create another one Thanks!.
+🚨 Our live demo is running on a limited number of free credits on Modal.com 🚨
+
+## About "Cold Starts"
+The very first analysis after a period of inactivity will experience a "cold start" and may take 40-60 seconds. This is because the serverless container needs to spin up a GPU.
+
+Subsequent analyses will be extremely fast (2-3 seconds). Please be patient on your first try!
+
+If the demo credits are exhausted, the API will not function. Please contact us at ayushkumr1991@gmail.com, and we will gladly provide a new endpoint. Thank you for your understanding!
+
+</div>
 
 </div>
